@@ -1,0 +1,47 @@
+1. Checking with the Invalid IP:
+   Invalid IP is given when the client is started. It will throw Connecting Server failed.
+
+2. Used UTSA LAN network to verify where mutilple client are ran in different machines and
+   simultaneously running the server in a separate machine.
+
+3. Keep book count to zero of any book and ordering the item.It should result as book is
+   un-available.
+
+4. Simultaneously ordering the same book from different client and check whether the shared
+   variables are properly updating.
+
+5. Simultaneously checking and updating the time of any service request and checked whether
+   proper sychronization is taking place.
+
+6. All the inputs are given in the client side are integers. I have checked with giving a string
+   for any of the inputs and checked whether program is throwing any error.
+
+7. Giving invalid values to all the inputs needed in the program and checked whether the
+   program is throwing any error.
+
+8. With out giving any service request, checked the performance queries like average request time
+   is showing no request registered message.
+
+9. Making more than one clients active and request as many service as possible. Then close the server,
+   all the request to the server from the clients after that should not connect to the server.
+
+10.Checked whether front-end and back-end server are communicating as per the client request by
+   priting the IP address for each of the request.
+
+11.Checked whether the search request is caching properly on each of the front-end server by checking
+   the search count from the server.
+
+12.Checked time synchronization among the front-end servers are done correctly by printing the offset
+   values in the corresponding slave and master servers.
+
+13.Done testing whether the master is periodically synchronizing with the slaves periodically for each 
+   60 seconds by printing time values.
+
+14.Tested whether the order request are properly synchronized by printing the time stamp for each of
+   the request.
+
+15.Tested whether the server is giving discount to each of the 100th request a discount by printing the 
+   order count request appropriately.
+   
+NOTE: All the tests are done manually.
+

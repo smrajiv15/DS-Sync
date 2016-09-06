@@ -1,0 +1,143 @@
+/* Welcome to MyBookStore.com - This file tells you how to run the
+ * server and the client program */
+
+First Server should be started
+------------------------------
+
+1. SERVER directory contains Makefile which builds the corresponding executables
+   for the source to run. It will provide the output executable as [server].
+
+2. Then I have written a shell script which will start start the server.
+   type : sh run.sh --> this will output as [ Server Stared ....].
+
+Command steps:
+-----------------
+
+elk02:~/working/OS/stable/SERVER> make
+cc server.c -o server -lpthread
+elk02:~/working/OS/stable/SERVER> sh run.sh 
+Server Started....
+
+Next, Slave1 should be started
+------------------------------
+
+1. FRONT_END directory has three subdirectories, in which go inside SLAVE1 directory.
+   Run the makefile to produce the executables need to run the slave1. It will provide the
+   output executable as [slave1].
+
+2. Then I have written a shell script which will start the slave1. Type sh run.sh -->
+   this will ask for the back-end server IP address for connecting to the server.
+   Ex: - [Enter the Server IP:XXX.XXX.XXX.XXX]. then the slave1 server is started.
+
+Command steps:
+--------------
+
+elk03:~/working/OS/stable/FRONT_END/SLAVE1> make
+cc slave1.c -o slave1 -lpthread
+elk03:~/working/OS/stable/FRONT_END/SLAVE1> sh run.sh 
+Enter the Server IP:
+XXX.XXX.XXX.XXX
+
+Next, Slave2 should be started
+------------------------------
+
+1. FRONT_END directory has three subdirectories, in which go inside SLAVE2 directory.
+   Run the makefile to produce the executables need to run the slave2. It will provide the
+   output executable as [slave2].
+
+2. Then I have written a shell script which will start the slave2. Type sh run.sh -->
+   this will ask for the back-end server IP address for connecting to the server.
+   Ex: - [Enter the Server IP:XXX.XXX.XXX.XXX]. then the slave2 server is started.
+
+Command steps:
+--------------
+
+elk03:~/working/OS/stable/FRONT_END/SLAVE2> make
+cc slave1.c -o slave2 -lpthread
+elk03:~/working/OS/stable/FRONT_END/SLAVE2> sh run.sh 
+Enter the Server IP:
+XXX.XXX.XXX.XXX
+
+
+Next, Master should be started
+------------------------------
+
+1. FRONT_END directory has three subdirectories, in which go inside MASTER directory.
+   Run the makefile to produce the executables need to run the master. It will provide the
+   output executable as [master].
+
+2. Then I have written a shell script which will start the master. Type sh run.sh -->
+   this will ask for the 3 IP addresses to connect with the 2 slaves and back-end Server.
+   
+Command steps:
+--------------
+
+elk05:~/working/OS/stable/FRONT_END/MASTER> make
+cc master.c -o master -lpthread
+elk05:~/working/OS/stable/FRONT_END/MASTER> sh run.sh
+Enter Slave1 IP:
+XXX.XXX.XXX.XXX
+Enter Slave2 IP:
+XXX.XXX.XXX.XXX
+Enter the Server IP:
+XXX.XXX.XXX.XXX
+Master started....
+
+
+Finally, Client should be started
+------------------------------
+
+1. In the CLIENT directory I have provided the makefile which builds the executables
+   for the source to run. It will provide the output executable as [client].
+
+2. Then I have written a shell script which will start the client.
+   type: sh run.sh --> this will ask for the IP address for contacting to the
+   front-end server like [ Enter the IP address: XXX.XXX.XXX.XXX].
+
+3. If it is a valid IP address of the front-end server, each of the functionality is returned
+   with the appropriate information. else, [Error: Connecting Server Failed] message
+   is displayed.
+
+Command Steps:
+--------------
+
+elk02:~/working/OS/stable/CLIENT> make
+cc client.c -o client -lpthread
+elk02:~/working/OS/stable/CLIENT> sh run.sh 
+Enter any Front end Server IP:
+XXX.XXX.XXX.XXX
+
+SAMPLE OUTPUT:
+---------------
+
+My Book Store :
+
+Available Options:
+1. Search
+2. lookup
+3. order
+4. Performance Queries
+5. Exit
+
+Enter the Required Option:3
+ORDER @ MyBookStore.com
+--------------------------
+
+Available Item Numbers to Order
+
+Item Numbers:
+How to be good at CS5523          : 111100078
+RMI's & RPC's                     : 111100077
+Why go to the Graduate School     : 111100076
+How to Survive the Graduate School: 111100075
+
+Enter the Item Number:111100078
+
+ORDER INFORMATION:
+---------------------
+
+Book With Item Number : 111100078 is Ordered
+Thank You for Purchasing @ MyBooks.com
+
+
+
